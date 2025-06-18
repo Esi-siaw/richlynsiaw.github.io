@@ -53,7 +53,7 @@ Deployment: GitHub Pages with custom domain support
 └── README.md                      # This documentation
 
 🚀 Live Demo
-Visit the live portfolio: https://richlynsiaw.github.io
+Visit the live portfolio: [https://richlynsiaw.github.io](https://esi-siaw.github.io/richlynsiaw.github.io/)
 
 **Professional Sections**
 
