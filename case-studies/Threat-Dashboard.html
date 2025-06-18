@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Risk Dashboard | Geopolitical Threat Monitoring</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; color: #333; background: #f4f4f9; }
+    h1, h2 { color: #1a237e; }
+    .dashboard { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .widget { margin-bottom: 1.5rem; padding: 1rem; background: #eef1f5; border-left: 5px solid #3b82f6; border-radius: 4px; }
+    .highlight { color: #0d47a1; font-weight: bold; }
+    .map { background: #d1e8ff; height: 300px; display: flex; align-items: center; justify-content: center; margin: 1rem 0; border-radius: 4px; color: #0f172a; font-weight: bold; }
+    .footer { margin-top: 3rem; font-size: 0.9rem; color: #666; }
+    canvas { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+
+  <h1>🌍 Strategic Risk Dashboard</h1>
+  <p>Interactive overview of geopolitical and governance risks with practical applications for public, private, and humanitarian partners. This dashboard reflects the kind of products I design for decision-makers needing clarity in fast-changing environments.</p>
+
+  <div class="dashboard">
+    <div class="widget">
+      <h2>⚠️ Active Political Instability Hotspots</h2>
+      <ul>
+        <li><strong>West Africa:</strong> Election tensions in Coastal States (Forecast: 3-6 months risk window)</li>
+        <li><strong>MENA:</strong> Escalating protests linked to economic hardship (Forecast: 4 weeks peak risk)</li>
+        <li><strong>Sahel Corridor:</strong> Cross-border extremist activity (Ongoing)</li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h2>📊 Risk Level Summary (Severity Index)</h2>
+      <canvas id="riskChart" width="400" height="200"></canvas>
+    </div>
+
+    <div class="map">🗺️ Regional Hotspot Visualization (Static Map Placeholder)</div>
+
+    <div class="widget">
+      <h2>🔔 Recent Alerts</h2>
+      <ul>
+        <li>[2h ago] Coordinated misinformation campaign targeting civic actors</li>
+        <li>[6h ago] Protest blockade reported near key infrastructure (Logistics delay possible)</li>
+        <li>[12h ago] Diplomatic fallout risk escalating between regional partners</li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <h2>🎯 Key Outputs for Stakeholders</h2>
+      <ul>
+        <li>✔️ <strong>Private Sector:</strong> Forward risk briefings for logistics partners</li>
+        <li>✔️ <strong>Governments:</strong> Scenario planning for coordinated national response</li>
+        <li>✔️ <strong>NGOs:</strong> Humanitarian access risk forecasts & mitigation planning</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    📧 Contact for collaboration or custom analysis: <strong>siawrichlyn7@gmail.com</strong>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('riskChart').getContext('2d');
+    const riskChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Political', 'Security', 'Disinformation'],
+        datasets: [{
+          label: 'Risk Severity (1-10)',
+          data: [6, 8, 7],
+          backgroundColor: ['#3b82f6', '#ef4444', '#f59e0b']
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { stepSize: 1 }
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
