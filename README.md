@@ -105,7 +105,7 @@ Professional Standards: Adheres to best practices for security, accuracy, and re
 
 💻 GitHub: [https://github.com/richlynsiaw](https://github.com/richlynsiaw)
 
-🌍 Location: Ghana (Remote Ready, Available for International Collaborations)
+🌍 Location: Ghana, (Remote Ready, Open to Relocation and International Collaborations)
 
 **📄 License**
 This project is licensed under the MIT License.
