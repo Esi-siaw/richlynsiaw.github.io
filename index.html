@@ -392,7 +392,36 @@
   </div>
 </section>
 
-  
+ <section id="contact" class="section" style="padding: 4rem 2rem; background: var(--secondary-color);">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title" style="margin-bottom: 2rem;">Get in Touch</h2>
+    <form action="https://formspree.io/f/myzjdgkg" method="POST" style="max-width: 600px; margin: 0 auto;">
+      
+      <div style="margin-bottom: 1rem;">
+        <label for="name" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Name</label>
+        <input type="text" id="name" name="name" required
+          style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(203, 213, 225, 0.2); background: rgba(255,255,255,0.05); color: var(--text-primary);">
+      </div>
+      
+      <div style="margin-bottom: 1rem;">
+        <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Email</label>
+        <input type="email" id="email" name="email" required
+          style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(203, 213, 225, 0.2); background: rgba(255,255,255,0.05); color: var(--text-primary);">
+      </div>
+      
+      <div style="margin-bottom: 1rem;">
+        <label for="message" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Message</label>
+        <textarea id="message" name="message" rows="5" required
+          style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(203, 213, 225, 0.2); background: rgba(255,255,255,0.05); color: var(--text-primary); resize: vertical;"></textarea>
+      </div>
+      
+      <button type="submit"
+        style="background: var(--gradient-accent); color: #fff; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-weight: bold; cursor: pointer; transition: background 0.3s ease;">Send Message</button>
+      
+    </form>
+  </div>
+</section>
+ 
   <footer>
     &copy; 2025 Richlyn Siaw. All Rights Reserved.
   </footer>
