@@ -3,59 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Threat Dashboard | Richlyn Siaw</title>
+  <title>Protest Risk Dashboard | Case Study</title>
+  <meta name="description" content="Interactive intelligence dashboard for real-time protest risk monitoring, early warning, and crisis management support.">
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <style>
-    body { background: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
-    .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
-    .breadcrumb { color: #cbd5e1; margin-bottom: 1rem; }
-    .breadcrumb a { color: #3b82f6; text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    h1, h2, h3 { background: linear-gradient(135deg, #4facfe, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    p, li { color: #cbd5e1; line-height: 1.6; }
-    .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
-    .tag { background: rgba(59, 130, 246, 0.2); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem; }
-    .back-link { display: inline-block; margin-top: 2rem; color: #3b82f6; text-decoration: none; }
-    .back-link:hover { text-decoration: underline; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #f8fafc; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero-section { padding: 8rem 0 4rem; text-align: center; background: rgba(59,130,246,0.1); }
+    .hero-section h1 { font-size: 2.5rem; background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: #cbd5e1; font-size: 1.2rem; margin-top: 1rem; }
+    .section { padding: 4rem 0; }
+    .section-title { font-size: 2rem; margin-bottom: 2rem; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .feature-list { list-style: none; padding: 0; margin: 1rem 0; }
+    .feature-list li { margin-bottom: 0.5rem; color: #cbd5e1; }
+    .tech-tag { display: inline-block; margin: 0.25rem; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(59,130,246,0.2); color: #3b82f6; }
+    .impact-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; margin-top: 3rem; }
+    .stat-card { background: rgba(30,41,59,0.8); padding: 1.5rem; border-radius: 1rem; text-align: center; }
+    .stat-number { font-size: 2rem; font-weight: bold; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-label { color: #94a3b8; margin-top: 0.5rem; font-size: 0.9rem; }
+    .back-btn { color: #f8fafc; background: #3b82f6; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; margin-top: 2rem; }
   </style>
 </head>
+
 <body>
-  <div class="container" data-aos="fade-up">
-    <div class="breadcrumb">
-      <a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / Threat Dashboard
+  <section class="hero-section">
+    <div class="container">
+      <h1>Real-Time Protest Risk Dashboard</h1>
+      <p class="subtitle">Integrated platform for early warning, crisis management, and reputational risk mitigation.</p>
     </div>
+  </section>
 
-    <h1>Real-Time Threat Dashboard</h1>
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project Overview</h2>
+      <p>Developed and operationalized an in-house dashboard for monitoring protest activity and associated reputational risks. Designed for senior officials, security teams, and C-suite leadership, the tool combined real-time feeds with predictive analysis to guide interventions.</p>
 
-    <p>This interactive <strong>geopolitical threat dashboard</strong> prototype was designed to provide timely visualization of security, governance, and misinformation risks across volatile regions.</p>
+      <ul class="feature-list">
+        <li><i class="fas fa-check" style="color:#10b981;"></i> Live protest alerts with geospatial visualization</li>
+        <li><i class="fas fa-check" style="color:#10b981;"></i> Integrated HUMINT, OSINT, and internal reporting</li>
+        <li><i class="fas fa-check" style="color:#10b981;"></i> Cross-sector coordination with 20+ key stakeholders</li>
+        <li><i class="fas fa-check" style="color:#10b981;"></i> Tailored messaging guidance for crisis response teams</li>
+      </ul>
 
-    <h2>Why It Matters</h2>
-    <p>Amid increasing global volatility and information overload, decision-makers needed faster situational awareness tools to bridge the gap between detection and response.</p>
+      <div class="impact-stats">
+        <div class="stat-card">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Actionable Reports Generated</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">85%</div>
+          <div class="stat-label">Reduction in Protest Violence</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">20</div>
+          <div class="stat-label">Stakeholders Engaged</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Regions Monitored</div>
+        </div>
+      </div>
 
-    <h2>Features</h2>
-    <ul>
-      <li>Real-time feeds with event tagging by risk severity</li>
-      <li>Heatmaps of geopolitical risks and active threats</li>
-      <li>Customizable stakeholder alerts and scenario projections</li>
-    </ul>
+      <h2 class="section-title" style="margin-top: 3rem;">Key Achievements</h2>
+      <ul class="feature-list">
+        <li><i class="fas fa-check" style="color:#10b981;"></i> Improved early warning and crisis response through regional coordination with partners in West Africa and Europe</li>
+        <li><i class="fas fa-check" style="color:#10b981;"></i> Enabled timely intervention, averting reputational risks for both government and private sector stakeholders</li>
+        <li><i class="fas fa-check" style="color:#10b981;"></i> Supported tailored messaging to restore public confidence during major protest events</li>
+      </ul>
 
-    <h2>Impact</h2>
-    <ul>
-      <li>Used in program simulation exercises for crisis response planning</li>
-      <li>Supported <strong>early-warning briefings</strong> during political unrest</li>
-      <li>Formed the basis for external partner collaboration on OSINT data streams</li>
-    </ul>
+      <h2 class="section-title" style="margin-top: 3rem;">Technical Stack</h2>
+      <div>
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Excel Dashboards</span>
+        <span class="tech-tag">i2 Analyst Notebook</span>
+        <span class="tech-tag">Internal Cloud Intranet</span>
+      </div>
 
-    <div class="project-tags">
-      <span class="tag">Geopolitical Risk</span>
-      <span class="tag">Data Visualization</span>
-      <span class="tag">Real-time Analysis</span>
+      <h2 class="section-title" style="margin-top: 3rem;">Case Highlight</h2>
+      <p>During heightened protests in Ghana in 2023, the dashboard provided real-time protest mapping combined with predictive analytics, allowing rapid tailored public messaging. This directly prevented reputational damage to both national stakeholders and private sector partners engaged in high-visibility sectors.</p>
+
+      <a href="../index.html#projects" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Projects</a>
     </div>
+  </section>
 
-    <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
