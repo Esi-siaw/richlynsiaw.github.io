@@ -3,58 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Richlyn Siaw | Strategic Intelligence Portfolio</title>
+  <title>Richlyn Siaw | Strategic Intelligence Analyst</title>
+  <meta name="description" content="Hi! I am Richlyn, a Strategic Intelligence Analyst specializing in geopolitical risk, OSINT, intelligence frameworks, and threat mitigation.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='100' font-weight='bold' fill='%234facfe'>R</text></svg>">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; color: #333; background: #f9f9fb; }
-    header { background: #0d47a1; color: #fff; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { margin: 0; font-size: 1.5rem; }
-    nav ul { list-style: none; display: flex; gap: 1.5rem; padding: 0; margin: 0; }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; position: relative; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 3rem 1rem; max-width: 960px; margin: auto; }
-    h2 { color: #0d47a1; }
-    .footer { text-align: center; padding: 2rem; background: #eef1f5; font-size: 0.9rem; color: #666; }
+    :root {
+      --primary-color: #0f172a;
+      --secondary-color: #1e293b;
+      --accent-color: #3b82f6;
+      --accent-hover: #2563eb;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #64748b;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--primary-color);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 14, 26, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 1rem 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .btn {
+      background: var(--gradient-accent);
+      color: #fff;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+    }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      background: var(--secondary-color);
+      color: var(--text-secondary);
+      margin-top: 4rem;
+    }
+
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Richlyn Siaw</h1>
-  <nav>
-    <ul>
-      <li><a href="frameworks/intelligence-cycle.html">Frameworks</a></li>
-      <li><a href="case-studies/threat-dashboard.html">Case Studies</a></li>
-      <li><a href="methodology/OSINT-framework.html">Methodology</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <nav class="header">
+    <div class="nav-container">
+      <div class="logo">Richlyn Siaw</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#analytics">Analytics</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
-</header>
 
-<section id="home">
-  <h2>Welcome to my Strategic Intelligence Portfolio</h2>
-  <p>I help governments, non-profits, and private sector organisations make clear, confident decisions in uncertain environments. My work bridges intelligence analysis, geopolitical risk, and policy advisory with a focus on actionable outcomes.</p>
-</section>
+  <section id="home" class="hero">
+    <h1>Richlyn | Strategic Intelligence Analyst</h1>
+    <p>Helping organizations make sense of complexity through strategic intelligence, risk frameworks, and actionable insights.</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </section>
 
-<section id="about">
-  <h2>What I Do</h2>
-  <ul>
-    <li>Strategic Intelligence & Geopolitical Risk Analysis</li>
-    <li>Stakeholder Engagement & Coalition Building</li>
-    <li>Policy Advisory for Governance & Security</li>
-    <li>Information Integrity & Counter-Disinformation</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <strong>siawrichlyn7@gmail.com</strong></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/richlyn-siaw" target="_blank">View Profile</a></p>
-  <p>GitHub: <a href="https://github.com/richlynsiaw" target="_blank">View Repository</a></p>
-</section>
-
-<div class="footer">
-  &copy; 2025 Richlyn Siaw | MIT License | Portfolio hosted on GitHub Pages
-</div>
+  <footer>
+    &copy; 2025 Richlyn Siaw. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
