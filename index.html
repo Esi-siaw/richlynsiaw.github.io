@@ -4,15 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Richlyn Siaw | Strategic Intelligence Analyst</title>
-  <meta name="description" content="Hi! I am Richlyn, a Strategic Intelligence Analyst with 5+ years specializing in geopolitical risk assessment, OSINT investigations, policy advisory, and threat intelligence.">
-
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='100' font-weight='bold' fill='%234facfe'>R</text></svg>">
+  <meta name="description" content="Hi! I am Richlyn, a Strategic Intelligence Analyst specializing in geopolitical risk, OSINT investigations, policy advisory, and threat intelligence.">
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   
   <style>
     :root {
@@ -27,11 +23,7 @@
       --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,31 +32,26 @@
       overflow-x: hidden;
     }
 
-    /* HEADER */
     .header {
       position: fixed;
-      top: 0;
       width: 100%;
       background: rgba(10, 14, 26, 0.95);
       backdrop-filter: blur(20px);
+      z-index: 999;
       padding: 1rem 0;
-      z-index: 9999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     .nav-container {
-      width: 90%;
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 1rem;
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: bold;
       background: var(--gradient-accent);
       -webkit-background-clip: text;
@@ -73,72 +60,89 @@
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-secondary);
       text-decoration: none;
-      font-weight: bold;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-color);
+      font-weight: 500;
     }
 
     .hero {
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       text-align: center;
-      padding: 6rem 2rem;
+      padding: 4rem 1rem;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.2rem;
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-top: 1rem;
       max-width: 600px;
     }
 
     .btn {
+      display: inline-block;
+      margin-top: 2rem;
       background: var(--gradient-accent);
-      color: #fff;
-      padding: 0.75rem 2rem;
+      padding: 0.6rem 1.5rem;
       border-radius: 0.5rem;
       text-decoration: none;
-      font-weight: bold;
+      color: white;
+      font-weight: 600;
     }
 
-    .btn:hover {
-      background: var(--accent-hover);
+    .section {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-item, .projects-grid, form {
+      background: var(--secondary-color);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 0.3rem;
+      border: 1px solid var(--accent-color);
+      background: #0f172a;
+      color: white;
     }
 
     footer {
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem;
       background: var(--secondary-color);
       color: var(--text-secondary);
-      margin-top: 4rem;
     }
 
+    @media(max-width: 768px){ .nav-links{display:none;} }
   </style>
 </head>
 
 <body>
-
   <nav class="header">
     <div class="nav-container">
       <div class="logo">Richlyn Siaw</div>
@@ -147,284 +151,67 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#analytics">Analytics</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <section id="home" class="hero">
-    <h1>Richlyn | Strategic Intelligence Analyst</h1>
-    <p>Helping organizations make sense of complexity through strategic intelligence, risk frameworks, and actionable insights.</p>
-    <a href="#projects" class="btn">View Projects</a>
+    <div>
+      <h1>Richlyn | Strategic Intelligence Analyst</h1>
+      <p>Helping organizations make sense of complexity through strategic intelligence, risk frameworks, and actionable insights.</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
   </section>
-<section id="about" class="section">
-  <div class="container">
+
+  <section id="projects" class="section">
     <div class="section-title" data-aos="fade-up">
-      <h2>Core Competencies</h2>
-      <p>My specialization blends strategic intelligence, geopolitical risk, and actionable threat analysis for decision-makers in complex environments.</p>
+      <h2>Key Projects</h2>
     </div>
-
-    <div class="skills-grid">
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-        <h3><i class="fas fa-globe"></i> Geopolitical Intelligence</h3>
-        <div class="skill-item">
-          <span>Strategic Threat Assessment</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Scenario Planning</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Election Risk Monitoring</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
-        </div>
-      </div>
-
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-        <h3><i class="fas fa-search"></i> OSINT & Investigations</h3>
-        <div class="skill-item">
-          <span>Open Source Intelligence (OSINT)</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="94"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Actor & Network Mapping</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Disinformation Analysis</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
-        </div>
-      </div>
-
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-        <h3><i class="fas fa-chart-line"></i> Technical & Analytical</h3>
-        <div class="skill-item">
-          <span>Data Visualization</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Risk Modelling</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Information Environment Mapping</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="89"></div></div>
-        </div>
-      </div>
-
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
-        <h3><i class="fas fa-shield-alt"></i> Risk & Governance</h3>
-        <div class="skill-item">
-          <span>Policy-Oriented Intelligence</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="93"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Countering Influence Operations</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="91"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Stakeholder Engagement</span>
-          <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="experience" class="section">
-  <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Professional Journey</h2>
-      <p>Blending intelligence analysis, governance expertise, and compliance leadership</p>
-    </div>
-
-    <div class="timeline">
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">Oct 2024 – Present</div>
-          <div class="timeline-company">National Security Council Secretariat</div>
-          <div class="timeline-role">Program Manager, Strategic Intelligence & Quality Assurance</div>
-          <p>Led multi-agency risk initiatives and established reporting compliance frameworks, aligning programs with donor standards and achieving 95% stakeholder satisfaction.</p>
-          <div class="project-tags">
-            <span class="tag">Risk Management</span>
-            <span class="tag">Compliance</span>
-            <span class="tag">Donor Reporting</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">Oct 2023 – Oct 2024</div>
-          <div class="timeline-company">Ministry of National Security</div>
-          <div class="timeline-role">Head of Social Policy & Governance Engagement</div>
-          <p>Produced actionable intelligence for private sector risk assessments and donor-funded social programs. Directed cross-border policy partnerships with the EU & AU.</p>
-          <div class="project-tags">
-            <span class="tag">Governance Intelligence</span>
-            <span class="tag">Partnerships</span>
-            <span class="tag">Due Diligence</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">June 2022 – Sept 2023</div>
-          <div class="timeline-company">Ministry of National Security</div>
-          <div class="timeline-role">Deputy Lead, Research & Programs</div>
-          <p>Facilitated cross-border risk assessments, donor engagement, and training on anti-corruption for international NGOs and governance partners.</p>
-          <div class="project-tags">
-            <span class="tag">Cross-Border Analysis</span>
-            <span class="tag">Capacity Building</span>
-            <span class="tag">Donor Engagement</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">Sept 2020 – Present</div>
-          <div class="timeline-company">Ministry of National Security</div>
-          <div class="timeline-role">Strategic Intelligence Analyst</div>
-          <p>Delivered geopolitical risk insights to national and international partners. Managed high-risk projects using compliance-aligned methodologies, improving success rates by 40%.</p>
-          <div class="project-tags">
-            <span class="tag">Geopolitical Risk</span>
-            <span class="tag">Due Diligence</span>
-            <span class="tag">International Stakeholders</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">June 2019 – July 2020</div>
-          <div class="timeline-company">DI Public Policy & Media Institute</div>
-          <div class="timeline-role">Public Policy Research Assistant</div>
-          <p>Produced policy briefs on national poverty programs and managed compliance reporting for donor-funded research projects.</p>
-          <div class="project-tags">
-            <span class="tag">Public Policy</span>
-            <span class="tag">Research</span>
-            <span class="tag">Audit Compliance</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<section id="projects" class="section">
-  <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Key Projects & Case Studies</h2>
-      <p>Selected highlights demonstrating impact through intelligence, compliance, and strategic advisory</p>
-    </div>
-
     <div class="projects-grid">
-
-      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="project-header">
-          <h3><i class="fas fa-network-wired"></i> Geopolitical Risk Dashboard Prototype</h3>
-        </div>
-        <div class="project-content">
-          <p>Developed a prototype dashboard integrating OSINT and stakeholder mapping to support proactive decision-making in volatile contexts.</p>
-          <div class="project-tags">
-            <span class="tag">Threat Analysis</span>
-            <span class="tag">Visualization</span>
-            <span class="tag">Risk Monitoring</span>
-          </div>
-          <a href="case-studies/threat-dashboard.html" class="project-link"><i class="fas fa-arrow-right"></i> View Case Study</a>
-        </div>
-      </div>
-
-      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="project-header">
-          <h3><i class="fas fa-chart-line"></i> Election Risk Mapping Initiative</h3>
-        </div>
-        <div class="project-content">
-          <p>Led analytical modeling of electoral risks across Ghana’s border regions. Produced early-warning briefs and supported donor-aligned mitigation strategies.</p>
-          <div class="project-tags">
-            <span class="tag">Election Security</span>
-            <span class="tag">Early Warning</span>
-            <span class="tag">Geopolitical Intelligence</span>
-          </div>
-          <a href="case-studies/election-risk.html" class="project-link"><i class="fas fa-arrow-right"></i> View Case Study</a>
-        </div>
-      </div>
-
-      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="project-header">
-          <h3><i class="fas fa-users-cog"></i> Social Resilience Programming (P/CVE)</h3>
-        </div>
-        <div class="project-content">
-          <p>Coordinated P/CVE programs focused on strengthening community resilience to radicalization in fragile border communities, integrating local intelligence inputs with donor priorities.</p>
-          <div class="project-tags">
-            <span class="tag">Community Resilience</span>
-            <span class="tag">Governance</span>
-            <span class="tag">Stakeholder Engagement</span>
-          </div>
-          <a href="case-studies/resilience-program.html" class="project-link"><i class="fas fa-arrow-right"></i> View Case Study</a>
-        </div>
-      </div>
-
-      <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="project-header">
-          <h3><i class="fas fa-map-marked-alt"></i> Regional Threat Analysis</h3>
-        </div>
-        <div class="project-content">
-          <p>Conducted regional analysis of Sahel security dynamics to inform national policy decisions and NGO humanitarian access planning.</p>
-          <div class="project-tags">
-            <span class="tag">Regional Analysis</span>
-            <span class="tag">Intelligence Briefs</span>
-            <span class="tag">Donor Reports</span>
-          </div>
-          <a href="case-studies/regional-threats.html" class="project-link"><i class="fas fa-arrow-right"></i> View Case Study</a>
-        </div>
-      </div>
-
+      <a href="case-studies/threat-dashboard.html" style="color:var(--text-primary);text-decoration:none;">
+        <h3>Threat Dashboard</h3>
+        <p>Real-time monitoring and early warning intelligence for national decision-makers and C-Suite clients.</p>
+      </a>
     </div>
-  </div>
-</section>
+    <div class="projects-grid">
+      <a href="case-studies/election-risk.html" style="color:var(--text-primary);text-decoration:none;">
+        <h3>Election Risk Mapping</h3>
+        <p>Election risk assessments for humanitarian, private sector, and donor planning.</p>
+      </a>
+    </div>
+    <div class="projects-grid">
+      <a href="case-studies/resilience-program.html" style="color:var(--text-primary);text-decoration:none;">
+        <h3>Resilience Programs</h3>
+        <p>Strengthening community resilience and governance programming to counter radicalization risks.</p>
+      </a>
+    </div>
+    <div class="projects-grid">
+      <a href="case-studies/regional-threats.html" style="color:var(--text-primary);text-decoration:none;">
+        <h3>Regional Threat Analysis</h3>
+        <p>Informed regional security assessments and diplomatic engagements.</p>
+      </a>
+    </div>
+  </section>
 
- <section id="contact" class="section" style="padding: 4rem 2rem; background: var(--secondary-color);">
-  <div class="container" data-aos="fade-up">
-    <h2 class="section-title" style="margin-bottom: 2rem;">Get in Touch</h2>
-    <form action="https://formspree.io/f/myzjdgkg" method="POST" style="max-width: 600px; margin: 0 auto;">
-      
-      <div style="margin-bottom: 1rem;">
-        <label for="name" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Name</label>
-        <input type="text" id="name" name="name" required
-          style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(203, 213, 225, 0.2); background: rgba(255,255,255,0.05); color: var(--text-primary);">
-      </div>
-      
-      <div style="margin-bottom: 1rem;">
-        <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Email</label>
-        <input type="email" id="email" name="email" required
-          style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(203, 213, 225, 0.2); background: rgba(255,255,255,0.05); color: var(--text-primary);">
-      </div>
-      
-      <div style="margin-bottom: 1rem;">
-        <label for="message" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">Message</label>
-        <textarea id="message" name="message" rows="5" required
-          style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(203, 213, 225, 0.2); background: rgba(255,255,255,0.05); color: var(--text-primary); resize: vertical;"></textarea>
-      </div>
-      
-      <button type="submit"
-        style="background: var(--gradient-accent); color: #fff; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-weight: bold; cursor: pointer; transition: background 0.3s ease;">Send Message</button>
-      
+  <section id="contact" class="section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p>Interested in collaboration or consultancy? Get in touch below.</p>
+    </div>
+
+    <form action="https://formspree.io/f/myzjdgkg" method="POST" data-aos="fade-up" data-aos-delay="100">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
     </form>
-  </div>
-</section>
- 
+  </section>
+
   <footer>
     &copy; 2025 Richlyn Siaw. All Rights Reserved.
   </footer>
 
+  <script>AOS.init();</script>
 </body>
 </html>
