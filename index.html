@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Richlyn Siaw | Strategic Intelligence Analyst</title>
-  <meta name="description" content="Hi! I am Richlyn, a Strategic Intelligence Analyst specializing in geopolitical risk, OSINT investigations, policy advisory, and threat intelligence.">
+  <meta name="description" content="Hi! I am Richlyn, a Strategic Intelligence Analyst with 5+ years specializing in geopolitical risk assessment, OSINT investigations, policy advisory, and threat intelligence.">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='100' font-weight='bold' fill='%234facfe'>R</text></svg>">
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
   <style>
     :root {
       --primary-color: #0f172a;
@@ -29,120 +32,32 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: var(--primary-color);
       color: var(--text-primary);
-      overflow-x: hidden;
     }
 
-    .header {
-      position: fixed;
-      width: 100%;
-      background: rgba(10, 14, 26, 0.95);
-      backdrop-filter: blur(20px);
-      z-index: 999;
-      padding: 1rem 0;
-    }
+    .header { position: fixed; top: 0; width: 100%; background: rgba(10, 14, 26, 0.95); padding: 1rem 0; z-index: 9999; }
+    .nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: bold; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: bold; }
+    .nav-links a:hover { color: var(--accent-color); }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 1rem;
-    }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 6rem 2rem; }
+    .hero h1 { font-size: 3.5rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
+    .btn { background: var(--gradient-accent); color: #fff; padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; }
+    .btn:hover { background: var(--accent-hover); }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: var(--gradient-accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+    .section-title { text-align: center; margin-bottom: 2rem; }
+    .projects-grid, .skills-grid, .timeline { display: grid; gap: 1.5rem; }
+    .project-card, .timeline-item { background: var(--secondary-color); padding: 1.5rem; border-radius: 0.75rem; }
+    .timeline-dot { width: 12px; height: 12px; background: var(--accent-color); border-radius: 50%; margin-bottom: 0.5rem; }
 
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      margin-top: 1rem;
-      max-width: 600px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 2rem;
-      background: var(--gradient-accent);
-      padding: 0.6rem 1.5rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-    }
-
-    .section {
-      padding: 4rem 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .timeline-item, .projects-grid, form {
-      background: var(--secondary-color);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border-radius: 0.3rem;
-      border: 1px solid var(--accent-color);
-      background: #0f172a;
-      color: white;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--secondary-color);
-      color: var(--text-secondary);
-    }
-
-    @media(max-width: 768px){ .nav-links{display:none;} }
+    footer { padding: 2rem; text-align: center; background: var(--secondary-color); color: var(--text-secondary); }
   </style>
 </head>
-
 <body>
+
   <nav class="header">
     <div class="nav-container">
       <div class="logo">Richlyn Siaw</div>
@@ -151,60 +66,55 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#analytics">Analytics</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <section id="home" class="hero">
-    <div>
-      <h1>Richlyn | Strategic Intelligence Analyst</h1>
-      <p>Helping organizations make sense of complexity through strategic intelligence, risk frameworks, and actionable insights.</p>
-      <a href="#projects" class="btn">View Projects</a>
+    <h1>Richlyn | Strategic Intelligence Analyst</h1>
+    <p>Helping organizations make sense of complexity through strategic intelligence, risk frameworks, and actionable insights.</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Core Competencies</h2>
+      <p>Strategic intelligence, geopolitical risk, and actionable threat analysis for decision-makers.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Professional Journey</h2>
+      <p>Blending intelligence analysis, governance expertise, and compliance leadership.</p>
     </div>
   </section>
 
   <section id="projects" class="section">
     <div class="section-title" data-aos="fade-up">
-      <h2>Key Projects</h2>
+      <h2>Projects & Case Studies</h2>
+      <p>Highlights of analytical, intelligence, and risk advisory projects.</p>
     </div>
-    <div class="projects-grid">
-      <a href="case-studies/threat-dashboard.html" style="color:var(--text-primary);text-decoration:none;">
-        <h3>Threat Dashboard</h3>
-        <p>Real-time monitoring and early warning intelligence for national decision-makers and C-Suite clients.</p>
-      </a>
-    </div>
-    <div class="projects-grid">
-      <a href="case-studies/election-risk.html" style="color:var(--text-primary);text-decoration:none;">
-        <h3>Election Risk Mapping</h3>
-        <p>Election risk assessments for humanitarian, private sector, and donor planning.</p>
-      </a>
-    </div>
-    <div class="projects-grid">
-      <a href="case-studies/resilience-program.html" style="color:var(--text-primary);text-decoration:none;">
-        <h3>Resilience Programs</h3>
-        <p>Strengthening community resilience and governance programming to counter radicalization risks.</p>
-      </a>
-    </div>
-    <div class="projects-grid">
-      <a href="case-studies/regional-threats.html" style="color:var(--text-primary);text-decoration:none;">
-        <h3>Regional Threat Analysis</h3>
-        <p>Informed regional security assessments and diplomatic engagements.</p>
-      </a>
+  </section>
+
+  <section id="analytics" class="section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Analytics Dashboard</h2>
+      <canvas id="analyticsChart" width="400" height="150"></canvas>
     </div>
   </section>
 
   <section id="contact" class="section">
     <div class="section-title" data-aos="fade-up">
       <h2>Contact</h2>
-      <p>Interested in collaboration or consultancy? Get in touch below.</p>
     </div>
-
-    <form action="https://formspree.io/f/myzjdgkg" method="POST" data-aos="fade-up" data-aos-delay="100">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button class="btn" type="submit">Send Message</button>
+    <form action="https://formspree.io/f/myzjdgkg" method="POST" style="max-width:600px;margin:auto;">
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;margin-bottom:1rem;padding:0.75rem;">
+      <input type="email" name="email" placeholder="Your Email" required style="width:100%;margin-bottom:1rem;padding:0.75rem;">
+      <textarea name="message" placeholder="Your Message" required rows="5" style="width:100%;margin-bottom:1rem;padding:0.75rem;"></textarea>
+      <button type="submit" class="btn">Send</button>
     </form>
   </section>
 
@@ -212,6 +122,15 @@
     &copy; 2025 Richlyn Siaw. All Rights Reserved.
   </footer>
 
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+    const ctx = document.getElementById('analyticsChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: { labels: ['Q1','Q2','Q3','Q4'], datasets: [{ label: 'Projects Completed', data: [5, 8, 6, 9], backgroundColor: '#4facfe' }] },
+      options: { responsive: true, plugins: { legend: { display: false } } }
+    });
+  </script>
+
 </body>
 </html>
