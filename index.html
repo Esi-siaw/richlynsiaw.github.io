@@ -12,12 +12,463 @@
   <!-- CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --secondary-color: #1e293b;
+      --accent-color: #3b82f6;
+      --accent-hover: #2563eb;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #64748b;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
 
-  <!-- JS Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--primary-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header { 
+      position: fixed; 
+      top: 0; 
+      width: 100%; 
+      background: rgba(10, 14, 26, 0.95); 
+      backdrop-filter: blur(20px);
+      padding: 1rem 0; 
+      z-index: 1000;
+      border-bottom: 1px solid rgba(79, 172, 254, 0.1);
+    }
+
+    .nav-container { 
+      width: 90%; 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 0 2rem;
+    }
+
+    .logo { 
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      background: var(--gradient-accent); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+    }
+
+    .nav-links { 
+      display: flex; 
+      gap: 2rem; 
+      list-style: none; 
+    }
+
+    .nav-links a { 
+      color: var(--text-secondary); 
+      text-decoration: none; 
+      font-weight: 600;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover { 
+      color: var(--accent-color); 
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 2rem 80px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-content .subtitle {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gradient-accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent-color);
+      border: 2px solid var(--accent-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+      height: 500px;
+    }
+
+    #hero-canvas {
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+    }
+
+    /* Sections */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-category {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .skill-category:hover {
+      border-color: var(--accent-color);
+      transform: translateY(-5px);
+    }
+
+    .skill-category h3 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .skill-bar {
+      width: 100px;
+      height: 6px;
+      background: rgba(59, 130, 246, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: var(--gradient-accent);
+      border-radius: 3px;
+      transition: width 2s ease;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 0.5rem;
+      color: var(--text-primary);
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--secondary-color);
+      border-top: 1px solid rgba(59, 130, 246, 0.1);
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    <style>
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent-color);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+    }
+
+    .project-header {
+      padding: 2rem;
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .project-content {
+      padding: 2rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: rgba(59, 130, 246, 0.2);
+      color: var(--accent-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+  </style>
+  <!-- [Keep all JavaScript from previous version] -->
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -162,7 +613,86 @@
         <h2>Projects & Case Studies</h2>
         <p>Highlights of analytical, intelligence, and risk advisory projects</p>
       </div>
-      <!-- Projects will be added here later -->
+      <section id="projects" class="section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Projects & Case Studies</h2>
+        <p>Demonstrating impact through strategic intelligence solutions</p>
+      </div>
+      
+      <div class="projects-grid">
+        <!-- Election Risk Project -->
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-header">
+            <h3><i class="fas fa-vote-yea"></i> Election Risk Assessment</h3>
+          </div>
+          <div class="project-content">
+            <p>Comprehensive monitoring of electoral threats and disinformation campaigns across West Africa.</p>
+            <div class="project-tags">
+              <span class="tag">OSINT</span>
+              <span class="tag">Risk Modeling</span>
+              <span class="tag">MENA</span>
+            </div>
+            <a href="case-studies/election-risk.html" class="project-link">
+              <i class="fas fa-arrow-right"></i> View Case Study
+            </a>
+          </div>
+        </div>
+
+        <!-- Regional Threats Project -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-header">
+            <h3><i class="fas fa-globe-africa"></i> Regional Threat Analysis</h3>
+          </div>
+          <div class="project-content">
+            <p>Real-time monitoring of security threats across SSA and MENA regions.</p>
+            <div class="project-tags">
+              <span class="tag">GEOINT</span>
+              <span class="tag">Threat Intel</span>
+              <span class="tag">SSA</span>
+            </div>
+            <a href="case-studies/regional-threats.html" class="project-link">
+              <i class="fas fa-arrow-right"></i> View Case Study
+            </a>
+          </div>
+        </div>
+
+        <!-- Resilience Program -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-header">
+            <h3><i class="fas fa-shield-alt"></i> Resilience Framework</h3>
+          </div>
+          <div class="project-content">
+            <p>Developed policy frameworks for countering foreign influence operations.</p>
+            <div class="project-tags">
+              <span class="tag">Policy</span>
+              <span class="tag">Stakeholders</span>
+              <span class="tag">EU</span>
+            </div>
+            <a href="case-studies/resilience-program.html" class="project-link">
+              <i class="fas fa-arrow-right"></i> View Case Study
+            </a>
+          </div>
+        </div>
+
+        <!-- Threat Dashboard -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-header">
+            <h3><i class="fas fa-chart-line"></i> Threat Dashboard</h3>
+          </div>
+          <div class="project-content">
+            <p>Interactive platform for visualizing emerging security threats.</p>
+            <div class="project-tags">
+              <span class="tag">Data Viz</span>
+              <span class="tag">Python</span>
+              <span class="tag">Dashboard</span>
+            </div>
+            <a href="case-studies/threat-dashboard.html" class="project-link">
+              <i class="fas fa-arrow-right"></i> View Case Study
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -214,6 +744,9 @@
   </footer>
 
   <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="assets/js/hero-animation.js"></script>
   <script>
     // Initialize AOS animations
