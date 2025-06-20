@@ -41,9 +41,45 @@
     .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: bold; }
     .nav-links a:hover { color: var(--accent-color); }
 
-    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 6rem 2rem; }
-    .hero h1 { font-size: 3.5rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
+    .<!-- In index.html -->
+<section id="home" class="hero">
+  <div class="hero-container">
+    <div class="hero-content" data-aos="fade-right">
+      <h1>Richlyn Siaw | Strategic Intelligence Analyst</h1>
+      <p class="subtitle">Delivering intelligence that strengthens security, protects democracy, and drives operational resilience for decision-makers worldwide</p>
+      
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">View Case Studies</a>
+        <a href="#contact" class="btn btn-secondary">Request Briefing</a>
+      </div>
+
+      <!-- Stats Dashboard -->
+      <div class="stats-grid">
+        <div class="stat-card floating" data-aos="fade-up">
+          <span class="stat-number" data-target="150">0</span>
+          <div class="stat-label">Intel Reports</div>
+        </div>
+        <div class="stat-card floating" data-aos="fade-up" data-aos-delay="100">
+          <span class="stat-number" data-target="85">0</span>
+          <div class="stat-label">% Risk Reduction</div>
+        </div>
+        <div class="stat-card floating" data-aos="fade-up" data-aos-delay="200">
+          <span class="stat-number" data-target="35">0</span>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-card floating" data-aos="fade-up" data-aos-delay="300">
+          <span class="stat-number" data-target="20">0</span>
+          <div class="stat-label">Donor Briefings</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Three.js Visualization -->
+    <div class="hero-visual" data-aos="fade-left">
+      <canvas id="hero-canvas"></canvas>
+    </div>
+  </div>
+</section>
     .btn { background: var(--gradient-accent); color: #fff; padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; }
     .btn:hover { background: var(--accent-hover); }
 
@@ -54,9 +90,7 @@
     .timeline-dot { width: 12px; height: 12px; background: var(--accent-color); border-radius: 50%; margin-bottom: 0.5rem; }
 
     footer { padding: 2rem; text-align: center; background: var(--secondary-color); color: var(--text-secondary); }
-  </style>
-</head>
-<body>
+ <link rel="stylesheet" href="assets/css/style.css">
 
   <nav class="header">
     <div class="nav-container">
@@ -85,13 +119,84 @@
     </div>
   </section>
 
-  <section id="experience" class="section">
+  <section id="about" class="section">
+  <div class="container">
     <div class="section-title" data-aos="fade-up">
-      <h2>Professional Journey</h2>
-      <p>Blending intelligence analysis, governance expertise, and compliance leadership.</p>
+      <h2>Core Competencies</h2>
+      <p>Specialized expertise in election security and information environment analysis</p>
     </div>
-  </section>
+    
+    <div class="skills-grid">
+      <!-- Geopolitical Intelligence -->
+      <div class="skill-category" data-aos="fade-up">
+        <h3><i class="fas fa-globe"></i> Geopolitical Intelligence</h3>
+        <div class="skill-item">
+          <span>Strategic Threat Assessment</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <span>Scenario Planning</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <span>Election Risk Monitoring</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+      </div>
 
+      <!-- OSINT & Investigation -->
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+        <h3><i class="fas fa-search"></i> OSINT & Investigation</h3>
+        <div class="skill-item">
+          <span>OSINT Collection</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <span>Actor & Network Mapping</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <span>Disinformation Analysis</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+      </div>
+
+      <!-- Technical & Analytical -->
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+        <h3><i class="fas fa-chart-line"></i> Technical & Analytical</h3>
+        <div class="skill-item">
+          <span>Data Visualization</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+        </div>
+        <div class="skill-item">
+          <span>Risk Modeling</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <span>Information Environment Mapping</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+        </div>
+      </div>
+
+      <!-- Risk & Governance -->
+      <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+        <h3><i class="fas fa-shield-alt"></i> Risk & Governance</h3>
+        <div class="skill-item">
+          <span>Policy-Oriented Intelligence</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <span>Countering Influence Operations</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <span>Stakeholder Engagement</span>
+          <div class="skill-bar"><div class="skill-progress" data-width="87"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   <section id="projects" class="section">
     <div class="section-title" data-aos="fade-up">
       <h2>Projects & Case Studies</h2>
