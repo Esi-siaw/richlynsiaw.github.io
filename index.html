@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Richlyn Siaw | Strategic Intelligence Analyst</title>
-  <meta name="description" content="Hi! I am Richlyn, a Strategic Intelligence Analyst with 5+ years specializing in geopolitical risk assessment, OSINT investigations, policy advisory, and threat intelligence.">
-
+  <meta name="description" content="Strategic Intelligence Analyst specializing in geopolitical risk assessment, OSINT investigations, and threat intelligence with 5+ years of experience.">
+  
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='100' font-weight='bold' fill='%234facfe'>R</text></svg>">
 
@@ -313,6 +313,166 @@
       transition: width 2s ease;
     }
 
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent-color);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: calc(50% + 2rem);
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-right: calc(50% + 2rem);
+      text-align: right;
+    }
+
+    .timeline-content {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .timeline-content:hover {
+      border-color: var(--accent-color);
+      transform: scale(1.02);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 2rem;
+      width: 16px;
+      height: 16px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      border: 4px solid var(--primary-color);
+    }
+
+    .timeline-date {
+      color: var(--accent-color);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-company {
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-role {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent-color);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+    }
+
+    .project-header {
+      padding: 2rem;
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .project-content {
+      padding: 2rem;
+    }
+
+    .project-stats {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .project-stats .stat {
+      text-align: center;
+      flex: 1;
+    }
+
+    .project-stats .stat-number {
+      font-weight: bold;
+      color: var(--accent-color);
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    .project-stats .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: rgba(59, 130, 246, 0.2);
+      color: var(--accent-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
     /* Contact Form */
     .contact-form {
       max-width: 600px;
@@ -396,78 +556,21 @@
         font-size: 2.5rem;
       }
 
-      .nav-links {
-        display: none;
+      .timeline::before {
+        left: 2rem;
       }
 
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 4rem;
+        margin-right: 0;
+        text-align: left;
+      }
+
+      .timeline-dot {
+        left: 2rem;
       }
     }
-    <style>
-    /* Projects Grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(59, 130, 246, 0.1);
-      border-radius: 1rem;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent-color);
-      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
-    }
-
-    .project-header {
-      padding: 2rem;
-      background: var(--gradient-primary);
-      color: white;
-    }
-
-    .project-content {
-      padding: 2rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .tag {
-      background: rgba(59, 130, 246, 0.2);
-      color: var(--accent-color);
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.8rem;
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: var(--accent-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .project-link:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-  </style>
-  <!-- [Keep all JavaScript from previous version] -->
   </style>
 </head>
 <body>
@@ -606,89 +709,241 @@
     </div>
   </section>
 
+  <!-- Experience Timeline -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Professional Journey</h2>
+        <p>Progressive leadership in intelligence and security governance</p>
+      </div>
+      
+      <div class="timeline">
+        <!-- Current Role -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">10/2024 – Present</div>
+            <div class="timeline-company">National Security Council Secretariat</div>
+            <div class="timeline-role">Program Manager, Strategic Intelligence & Quality Assurance</div>
+            <p>Achieved 95% stakeholder satisfaction by:</p>
+            <ul>
+              <li>Aligning intelligence workflows with donor reporting standards</li>
+              <li>Implementing multi-agency collaboration frameworks</li>
+              <li>Developing compliance automation systems</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Stakeholder Management</span>
+              <span class="tag">Compliance</span>
+              <span class="tag">Workflow Optimization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Previous Roles -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">10/2023 – 10/2024</div>
+            <div class="timeline-company">Ministry of National Security</div>
+            <div class="timeline-role">Head of Social Policy & Governance Engagement</div>
+            <p>Secured cross-border partnerships with EU & AU through:</p>
+            <ul>
+              <li>Geopolitical risk forecasting models</li>
+              <li>Donor-specific intelligence products</li>
+              <li>Influence operation tracking dashboards</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Diplomatic Engagement</span>
+              <span class="tag">EU-AU Relations</span>
+              <span class="tag">Influence Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">06/2022 – 09/2023</div>
+            <div class="timeline-company">Ministry of National Security</div>
+            <div class="timeline-role">Deputy Lead, Research & Programs</div>
+            <p>Enhanced donor engagement through:</p>
+            <ul>
+              <li>Coordinated regional security assessments</li>
+              <li>OSINT-driven stakeholder mapping</li>
+              <li>Compliance-focused reporting systems</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Donor Relations</span>
+              <span class="tag">OSINT</span>
+              <span class="tag">Compliance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">09/2020 – Present</div>
+            <div class="timeline-company">Ministry of National Security</div>
+            <div class="timeline-role">Strategic Intelligence Analyst</div>
+            <p>Improved project success rates by 40% through:</p>
+            <ul>
+              <li>Geopolitical forecasting briefings</li>
+              <li>HUMINT/OSINT fusion analysis</li>
+              <li>Predictive risk modeling</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Risk Modeling</span>
+              <span class="tag">Intelligence Fusion</span>
+              <span class="tag">Briefings</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">06/2019 – 07/2020</div>
+            <div class="timeline-company">DI Public Policy & Media Institute</div>
+            <div class="timeline-role">Public Policy Research Assistant</div>
+            <p>Supported policy reforms through:</p>
+            <ul>
+              <li>Evidence-based policy briefs</li>
+              <li>Data visualization dashboards</li>
+              <li>Donor compliance audits</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Policy Research</span>
+              <span class="tag">Data Visualization</span>
+              <span class="tag">Compliance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section id="projects" class="section">
     <div class="container">
       <div class="section-title" data-aos="fade-up">
-        <h2>Projects & Case Studies</h2>
-        <p>Highlights of analytical, intelligence, and risk advisory projects</p>
-      </div>
-      <section id="projects" class="section">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Projects & Case Studies</h2>
-        <p>Demonstrating impact through strategic intelligence solutions</p>
+        <h2>Key Projects</h2>
+        <p>Strategic intelligence solutions with measurable impact</p>
       </div>
       
       <div class="projects-grid">
-        <!-- Election Risk Project -->
+        <!-- Threat Dashboard -->
         <div class="project-card" data-aos="fade-up">
           <div class="project-header">
-            <h3><i class="fas fa-vote-yea"></i> Election Risk Assessment</h3>
+            <h3><i class="fas fa-chart-network"></i> Geopolitical Threat Dashboard</h3>
           </div>
           <div class="project-content">
-            <p>Comprehensive monitoring of electoral threats and disinformation campaigns across West Africa.</p>
-            <div class="project-tags">
-              <span class="tag">OSINT</span>
-              <span class="tag">Risk Modeling</span>
-              <span class="tag">MENA</span>
+            <p><strong>Challenge:</strong> Senior decision-makers lacked real-time threat monitoring during regional instability.</p>
+            <p><strong>Solution:</strong> Custom dashboard integrating HUMINT, OSINT, and media feeds for early warnings.</p>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">85%</span>
+                <span class="stat-label">Reduction in violence escalation</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Intel briefs generated</span>
+              </div>
             </div>
-            <a href="case-studies/election-risk.html" class="project-link">
-              <i class="fas fa-arrow-right"></i> View Case Study
+            <div class="project-tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">Crisis Monitoring</span>
+              <span class="tag">Stakeholder COM</span>
+            </div>
+            <a href="case-studies/threat-dashboard.html" class="project-link">
+              <i class="fas fa-arrow-right"></i> Methodology Details
             </a>
           </div>
         </div>
 
-        <!-- Regional Threats Project -->
+        <!-- Election Risk -->
         <div class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="project-header">
-            <h3><i class="fas fa-globe-africa"></i> Regional Threat Analysis</h3>
+            <h3><i class="fas fa-vote-yea"></i> Election Risk Framework</h3>
           </div>
           <div class="project-content">
-            <p>Real-time monitoring of security threats across SSA and MENA regions.</p>
+            <p><strong>Challenge:</strong> NGOs/private sector faced elevated risks during election cycles.</p>
+            <p><strong>Solution:</strong> 15-indicator risk assessment framework with media tracking.</p>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">NGO safety improvement</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Market-entry risk briefs</span>
+              </div>
+            </div>
             <div class="project-tags">
-              <span class="tag">GEOINT</span>
-              <span class="tag">Threat Intel</span>
-              <span class="tag">SSA</span>
+              <span class="tag">OSINT</span>
+              <span class="tag">Early Warning</span>
+              <span class="tag">NGO Coordination</span>
+            </div>
+            <a href="case-studies/election-risk.html" class="project-link">
+              <i class="fas fa-arrow-right"></i> Framework Documentation
+            </a>
+          </div>
+        </div>
+
+        <!-- Regional Threats -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-header">
+            <h3><i class="fas fa-globe-africa"></i> Sahel Spillover Prevention</h3>
+          </div>
+          <div class="project-content">
+            <p><strong>Challenge:</strong> Needed accurate assessments to prevent Sahel conflict spillover.</p>
+            <p><strong>Solution:</strong> Multi-source regional analysis with cross-border collaboration.</p>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">40%</span>
+                <span class="stat-label">Improved humanitarian access</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Cross-border partnerships</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="tag">HUMINT</span>
+              <span class="tag">Regional OSINT</span>
+              <span class="tag">Policy Reports</span>
             </div>
             <a href="case-studies/regional-threats.html" class="project-link">
-              <i class="fas fa-arrow-right"></i> View Case Study
+              <i class="fas fa-arrow-right"></i> Analysis Methodology
             </a>
           </div>
         </div>
 
         <!-- Resilience Program -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-header">
-            <h3><i class="fas fa-shield-alt"></i> Resilience Framework</h3>
-          </div>
-          <div class="project-content">
-            <p>Developed policy frameworks for countering foreign influence operations.</p>
-            <div class="project-tags">
-              <span class="tag">Policy</span>
-              <span class="tag">Stakeholders</span>
-              <span class="tag">EU</span>
-            </div>
-            <a href="case-studies/resilience-program.html" class="project-link">
-              <i class="fas fa-arrow-right"></i> View Case Study
-            </a>
-          </div>
-        </div>
-
-        <!-- Threat Dashboard -->
         <div class="project-card" data-aos="fade-up" data-aos-delay="300">
           <div class="project-header">
-            <h3><i class="fas fa-chart-line"></i> Threat Dashboard</h3>
+            <h3><i class="fas fa-shield-alt"></i> Social Resilience Program</h3>
           </div>
           <div class="project-content">
-            <p>Interactive platform for visualizing emerging security threats.</p>
-            <div class="project-tags">
-              <span class="tag">Data Viz</span>
-              <span class="tag">Python</span>
-              <span class="tag">Dashboard</span>
+            <p><strong>Challenge:</strong> Border communities lacked defenses against radicalization.</p>
+            <p><strong>Solution:</strong> P/CVE programs with local intelligence integration.</p>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Regional programs launched</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">60%</span>
+                <span class="stat-label">Vulnerability reduction</span>
+              </div>
             </div>
-            <a href="case-studies/threat-dashboard.html" class="project-link">
-              <i class="fas fa-arrow-right"></i> View Case Study
+            <div class="project-tags">
+              <span class="tag">Community Intel</span>
+              <span class="tag">Donor Alignment</span>
+              <span class="tag">Influence Mapping</span>
+            </div>
+            <a href="case-studies/resilience-program.html" class="project-link">
+              <i class="fas fa-arrow-right"></i> Program Framework
             </a>
           </div>
         </div>
@@ -701,9 +956,9 @@
     <div class="container">
       <div class="section-title" data-aos="fade-up">
         <h2>Analytics Dashboard</h2>
-        <canvas id="analyticsChart" width="400" height="150"></canvas>
+        <p>Data-driven insights demonstrating operational impact</p>
       </div>
-      <!-- Heatmap will be added here later -->
+      <canvas id="analyticsChart" width="400" height="150"></canvas>
     </div>
   </section>
 
@@ -712,6 +967,7 @@
     <div class="container">
       <div class="section-title" data-aos="fade-up">
         <h2>Contact</h2>
+        <p>Connect for intelligence consulting or speaking engagements</p>
       </div>
       <form action="https://formspree.io/f/myzjdgkg" method="POST" class="contact-form">
         <div class="form-group">
@@ -737,7 +993,7 @@
       <div class="social-links">
         <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
         <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:siawrichlyn7@gmail.com" class="https://www.linkedin.com/in/richlyn-siaw/"><i class="fas fa-envelope"></i></a>
       </div>
       <p>&copy; 2025 Richlyn Siaw. All Rights Reserved.</p>
     </div>
@@ -760,16 +1016,26 @@
     new Chart(ctx, {
       type: 'bar',
       data: { 
-        labels: ['Q1','Q2','Q3','Q4'], 
+        labels: ['Threat Intel', 'Policy Analysis', 'OSINT', 'Risk Modeling'], 
         datasets: [{ 
           label: 'Projects Completed', 
-          data: [5, 8, 6, 9], 
+          data: [12, 8, 15, 10], 
           backgroundColor: '#4facfe' 
         }] 
       },
       options: { 
         responsive: true, 
-        plugins: { legend: { display: false } } 
+        plugins: { legend: { display: false } },
+        scales: {
+          y: {
+            ticks: { color: '#cbd5e1' },
+            grid: { color: 'rgba(203, 213, 225, 0.1)' }
+          },
+          x: {
+            ticks: { color: '#cbd5e1' },
+            grid: { color: 'rgba(203, 213, 225, 0.1)' }
+          }
+        }
       }
     });
 
@@ -785,6 +1051,33 @@
       });
     });
     skillObserver.observe(document.querySelector('.skills-grid'));
+
+    // Animate stats counters
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.stat-number').forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const updateCounter = () => {
+              current += step;
+              if (current < target) {
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = target;
+              }
+            };
+            updateCounter();
+          });
+          statObserver.disconnect();
+        }
+      });
+    });
+    statObserver.observe(document.querySelector('.stats-grid'));
   </script>
 </body>
 </html>
