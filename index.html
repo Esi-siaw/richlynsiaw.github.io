@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Richlyn Siaw | Strategic Intelligence Analyst</title>
-  <meta name="description" content="Strategic Intelligence Analyst specializing in geopolitical risk assessment, OSINT investigations, and threat intelligence with 5+ years of experience.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='100' font-weight='bold' fill='%234facfe'>R</text></svg>">
@@ -59,6 +58,16 @@
       align-items: center; 
       padding: 0 2rem;
     }
+    <!-- Mobile Menu Toggle Button -->
+<button class="menu-toggle" id="mobileMenuToggle">
+  <i class="fas fa-bars"></i>
+</button>
+
+<script>
+  document.getElementById('mobileMenuToggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
+</script>
 
     .logo { 
       font-size: 1.8rem; 
@@ -160,6 +169,19 @@
       display: inline-block;
       text-align: center;
     }
+   /* Touch Targets */
+@media (max-width: 768px) {
+  .btn, .project-link, .nav-links a {
+    min-height: 48px;
+    min-width: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  input, textarea, select {
+    font-size: 16px; /* Prevent iOS zoom */
+  }
+} 
 
     .btn-primary {
       background: var(--gradient-accent);
@@ -571,6 +593,14 @@
         left: 2rem;
       }
     }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+  /* ...existing mobile styles... */
+}
+    
   </style>
 </head>
 <body>
@@ -929,7 +959,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Projects Section -->
   <section id="projects" class="section">
     <div class="container">
@@ -973,38 +1003,6 @@
     <!-- Vis.js will render here -->
   </div>
 </div>
-
-<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-<script>
-  const nodes = new vis.DataSet([
-    {id: 1, label: "APT29", group: "state", value: 40},
-    {id: 2, label: "Wagner", group: "pmc", value: 35},
-    {id: 3, label: "JNIM", group: "terror", value: 30}
-  ]);
-  const edges = new vis.DataSet([
-    {from: 1, to: 2, label: "arms", dashes: true},
-    {from: 2, to: 3, label: "training"}
-  ]);
-  new vis.Network(document.getElementById('networkGraph'), 
-    {nodes, edges},
-    {
-      nodes: { 
-        shape: 'dot',
-        font: { color: '#f8fafc' }
-      },
-      edges: { 
-        color: '#64748b',
-        arrows: 'to',
-        font: { color: '#cbd5e1', size: 10 }
-      },
-      groups: {
-        state: { color: '#ef4444' },
-        pmc: { color: '#f59e0b' },
-        terror: { color: '#10b981' }
-      }
-    }
-  );
-</script>
         
         <!-- Election Risk -->
         <div class="project-card" data-aos="fade-up" data-aos-delay="100">
@@ -1459,5 +1457,12 @@
     });
     statObserver.observe(document.querySelector('.stats-grid'));
   </script>
+  <script>
+  if (window.innerWidth > 768) {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    document.body.appendChild(script);
+  }
+</script>
 </body>
 </html>
