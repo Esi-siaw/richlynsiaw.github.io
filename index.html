@@ -967,7 +967,45 @@
             </a>
           </div>
         </div>
+<div class="analytics-card" data-aos="fade-up">
+  <h3><i class="fas fa-project-diagram"></i> Threat Actor Associations</h3>
+  <div id="networkGraph" style="height:400px; background: url('data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><rect width='20' height='20' fill='%231e293b'/><path d='M0,0 L20,20 M20,0 L0,20' stroke='%233b82f6' opacity='0.1'/></svg>')">
+    <!-- Vis.js will render here -->
+  </div>
+</div>
 
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<script>
+  const nodes = new vis.DataSet([
+    {id: 1, label: "APT29", group: "state", value: 40},
+    {id: 2, label: "Wagner", group: "pmc", value: 35},
+    {id: 3, label: "JNIM", group: "terror", value: 30}
+  ]);
+  const edges = new vis.DataSet([
+    {from: 1, to: 2, label: "arms", dashes: true},
+    {from: 2, to: 3, label: "training"}
+  ]);
+  new vis.Network(document.getElementById('networkGraph'), 
+    {nodes, edges},
+    {
+      nodes: { 
+        shape: 'dot',
+        font: { color: '#f8fafc' }
+      },
+      edges: { 
+        color: '#64748b',
+        arrows: 'to',
+        font: { color: '#cbd5e1', size: 10 }
+      },
+      groups: {
+        state: { color: '#ef4444' },
+        pmc: { color: '#f59e0b' },
+        terror: { color: '#10b981' }
+      }
+    }
+  );
+</script>
+        
         <!-- Election Risk -->
         <div class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="project-header">
