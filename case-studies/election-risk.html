@@ -3,66 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Election Risk Methodology | Richlyn Siaw</title>
-  <link href="../styles.css" rel="stylesheet">
+  <title>Election Risk Framework | Richlyn Siaw</title>
+  <!-- Same assets as main portfolio -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+  <style>
+    /* Inherit all root variables from main CSS */
+    
+    .methodology-header {
+      background: linear-gradient(135deg, #6e44ff 0%, #4a00e0 100%);
+      padding: 3rem 2rem;
+      border-radius: 1rem 1rem 0 0;
+      color: white;
+    }
+    
+    .methodology-content {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 0 0 1rem 1rem;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .method-step {
+      background: rgba(15, 23, 42, 0.7);
+      border-left: 3px solid var(--accent-color);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .method-step:hover {
+      transform: translateX(5px);
+      border-left-color: #4facfe;
+    }
+    
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .evidence-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+    
+    .confidential-stamp {
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      opacity: 0.1;
+      font-size: 8rem;
+      z-index: 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="methodology-container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
-    <a href="../index.html#interventions" class="back-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-color); text-decoration: none; margin-bottom: 1rem;">
-      <i class="fas fa-arrow-left"></i> Back to Strategic Interventions
-    </a>
+  <!-- Navigation (Same as main portfolio) -->
+  <nav class="header">
+    <div class="nav-container">
+      <div class="logo">Richlyn Siaw</div>
+      <ul class="nav-links">
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#analytics">Analytics</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h1 style="color: var(--accent-color); margin-bottom: 1rem;">Election Risk Framework Methodology</h1>
-    
-    <div class="methodology-content" style="background: rgba(30, 41, 59, 0.8); border-radius: 1rem; padding: 2rem;">
-      <h2 style="color: var(--text-primary); border-bottom: 1px solid rgba(59, 130, 246, 0.3); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-        <i class="fas fa-vote-yea"></i> Strategic Challenge
-      </h2>
-      <p style="color: var(--text-primary); margin-bottom: 2rem;">
-        NGOs and private sector actors required predictive risk assessment during volatile election cycles where traditional security advisories lacked contextual nuance.
-      </p>
-
-      <h2 style="color: var(--text-primary); border-bottom: 1px solid rgba(59, 130, 246, 0.3); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-        <i class="fas fa-project-diagram"></i> Methodology
-      </h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-        <div class="method-step" style="background: rgba(15, 23, 42, 0.5); padding: 1rem; border-radius: 0.5rem;">
-          <h3 style="color: var(--accent-color); font-size: 1rem; margin-bottom: 0.5rem;">1. Indicator Matrix</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            15 weighted metrics tracking historical violence, candidate rhetoric, and disinformation trends.
-          </p>
+  <!-- Methodology Header -->
+  <section class="section" style="padding-top: 8rem;">
+    <div class="container">
+      <a href="../index.html#projects" class="btn btn-secondary" style="margin-bottom: 2rem;">
+        <i class="fas fa-arrow-left"></i> Back to Projects
+      </a>
+      
+      <div class="methodology-header" data-aos="fade-up">
+        <i class="fas fa-lock confidential-stamp"></i>
+        <h1>Election Security Framework</h1>
+        <p>Proprietary methodology for predicting and mitigating electoral violence</p>
+        <div class="project-tags" style="margin-top: 1rem;">
+          <span class="tag">OSINT</span>
+          <span class="tag">Risk Modeling</span>
+          <span class="tag">Stakeholder COM</span>
         </div>
-        <div class="method-step" style="background: rgba(15, 23, 42, 0.5); padding: 1rem; border-radius: 0.5rem;">
-          <h3 style="color: var(--accent-color); font-size: 1rem; margin-bottom: 0.5rem;">2. Embedded Monitoring</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            Localized civil society nodes providing ground truth verification.
-          </p>
+      </div>
+      
+      <!-- Methodology Content -->
+      <div class="methodology-content" data-aos="fade-up">
+        <div class="section-title" style="text-align: left;">
+          <h2><i class="fas fa-bullseye"></i> Strategic Challenge</h2>
         </div>
-        <div class="method-step" style="background: rgba(15, 23, 42, 0.5); padding: 1rem; border-radius: 0.5rem;">
-          <h3 style="color: var(--accent-color); font-size: 1rem; margin-bottom: 0.5rem;">3. Decision Dashboard</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            Real-time visualization of risk heatmaps and recommended actions.
+        <p style="color: var(--text-primary); margin-bottom: 2rem;">
+          NGOs and private sector actors required predictive risk assessment during volatile election cycles where traditional security advisories lacked contextual nuance and early-warning capabilities.
+        </p>
+        
+        <div class="section-title" style="text-align: left;">
+          <h2><i class="fas fa-cogs"></i> Operational Framework</h2>
+        </div>
+        
+        <div class="method-step" data-aos="fade-up">
+          <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">
+            <i class="fas fa-table"></i> 15-Indicator Risk Matrix
+          </h3>
+          <p style="color: var(--text-primary);">
+            Weighted metrics tracking:
+          </p>
+          <div class="evidence-grid">
+            <div class="evidence-card">
+              <h4 style="color: #EF4444;">Structural Factors</h4>
+              <ul style="color: var(--text-secondary);">
+                <li>Historical violence patterns</li>
+                <li>Electoral system design</li>
+                <li>Economic indicators</li>
+              </ul>
+            </div>
+            <div class="evidence-card">
+              <h4 style="color: #F59E0B;">Actors & Networks</h4>
+              <ul style="color: var(--text-secondary);">
+                <li>Candidate rhetoric analysis</li>
+                <li>Armed group positioning</li>
+                <li>Disinformation networks</li>
+              </ul>
+            </div>
+            <div class="evidence-card">
+              <h4 style="color: #10B981;">Mitigation Capacity</h4>
+              <ul style="color: var(--text-secondary);">
+                <li>Civil society resilience</li>
+                <li>Security force posture</li>
+                <li>International engagement</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="method-step" data-aos="fade-up" data-aos-delay="100">
+          <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">
+            <i class="fas fa-network-wired"></i> Embedded Monitoring Nodes
+          </h3>
+          <p style="color: var(--text-primary);">
+            Localized intelligence collection through:
+          </p>
+          <ul style="color: var(--text-primary); padding-left: 1.25rem;">
+            <li>Civil society verification partners in 12 hotspot districts</li>
+            <li>Automated social media listening posts</li>
+            <li>Cross-border information sharing protocols</li>
+          </ul>
+        </div>
+        
+        <div class="method-step" data-aos="fade-up" data-aos-delay="200">
+          <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">
+            <i class="fas fa-tachometer-alt"></i> Decision Dashboard
+          </h3>
+          <p style="color: var(--text-primary);">
+            Real-time visualization interface providing:
+          </p>
+          <div style="background: rgba(15, 23, 42, 0.7); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+              <div>
+                <div style="font-size: 1.5rem; color: #EF4444;">3</div>
+                <div style="font-size: 0.8rem;">Threat Levels</div>
+              </div>
+              <div>
+                <div style="font-size: 1.5rem; color: #4F46E5;">8</div>
+                <div style="font-size: 0.8rem;">Sector Impacts</div>
+              </div>
+              <div>
+                <div style="font-size: 1.5rem; color: #10B981;">72h</div>
+                <div style="font-size: 0.8rem;">Lead Time Avg.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section-title" style="text-align: left; margin-top: 3rem;">
+          <h2><i class="fas fa-chart-line"></i> Documented Impact</h2>
+        </div>
+        
+        <div style="background: rgba(59, 130, 246, 0.1); padding: 2rem; border-radius: 0.5rem; border-left: 3px solid var(--accent-color);">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: bold; color: var(--accent-color);">90%</div>
+              <div style="color: var(--text-secondary);">NGO safety compliance</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: bold; color: var(--accent-color);">12</div>
+              <div style="color: var(--text-secondary);">Corporate briefings</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: bold; color: var(--accent-color);">3</div>
+              <div style="color: var(--text-secondary);">Violence events predicted</div>
+            </div>
+          </div>
+          <p style="color: var(--text-primary);">
+            <strong>Key Outcome:</strong> Framework adopted by 3 international NGOs for 2024 election monitoring cycles.
           </p>
         </div>
       </div>
-
-      <h2 style="color: var(--text-primary); border-bottom: 1px solid rgba(59, 130, 246, 0.3); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-        <i class="fas fa-chart-line"></i> Key Results
-      </h2>
-      <ul style="color: var(--text-primary); padding-left: 1.25rem; margin-bottom: 2rem;">
-        <li style="margin-bottom: 0.5rem;">100% NGO safety compliance during high-risk periods</li>
-        <li style="margin-bottom: 0.5rem;">12 market-entry risk briefs adopted by Fortune 500 firms</li>
-        <li style="margin-bottom: 0.5rem;">Early warning of 3 major protest events (72hr lead time)</li>
-      </ul>
-
-      <div style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 0.5rem; border-left: 3px solid var(--accent-color);">
-        <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">Why This Matters</h3>
-        <p style="color: var(--text-primary);">
-          Bridged the gap between <strong>threat intelligence</strong> and <strong>operational decision-making</strong> during politically sensitive periods, enabling proactive security postures.
-        </p>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="../index.html#contact" class="btn btn-primary">
+          <i class="fas fa-envelope"></i> Request Methodology Brief
+        </a>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Footer (Same as main portfolio) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="mailto:siawrichlyn7@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2025 Richlyn Siaw. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>
